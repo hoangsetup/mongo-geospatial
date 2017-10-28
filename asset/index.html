@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tìm quanh đây</title>
+    <link rel="stylesheet" href="css/boostrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDopnJjD84HsfROsDkfvkVWvlMN3i5J9eA&callback=initMap">
+    </script>
+</head>
+<body class="container">
+<div class="panel panel-success">
+    <div class="panel-heading">
+        Thêm địa điểm
+    </div>
+    <div class="panel-body">
+        <form onsubmit="return false">
+            <div class="form-group">
+                <label for="desc">Mô tả</label>
+                <textarea class="form-control" id="desc" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="category">Danh mục</label>
+                <select class="form-control" id="category">
+                    <option value="famous_area">Địa điểm nổi tiếng</option>
+                    <option value="food_drink">Ăn uống</option>
+                    <option value="park">Vui chơi</option>
+                    <option value="other">Khác</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="category_find">Location</label>
+                <input class="form-control" type="text" placeholder="Location" id="location" readonly>
+            </div>
+            <button type="submit" id="btn_submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>
+<div class="panel-success">
+    <div class="panel-heading">
+        Tìm quanh đây
+    </div>
+    <div class="panel-body">
+        <form onsubmit="return false">
+            <div class="form-group">
+                <label for="category_find">Danh mục</label>
+                <select class="form-control" id="category_find">
+                    <option selected>Tất cả</option>
+                    <option value="famous_area">Địa điểm nổi tiếng</option>
+                    <option value="food_drink">Ăn uống</option>
+                    <option value="park">Vui chơi</option>
+                    <option value="other">Khác</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="center_point">Tìm theo</label>
+                <select class="form-control" id="center_point">
+                    <option value="current">Vị trí của tôi</option>
+                    <option value="marker">Điểm dánh dấu</option>
+                </select>
+            </div>
+            <button type="submit" id="btn_find" class="btn btn-primary">Tìm</button>
+        </form>
+    </div>
+</div>
+<div class="panel-success">
+    <div class="panel-heading">
+        Bản đồ
+    </div>
+    <div class="panel-body" id="map">
+
+    </div>
+</div>
+</body>
+</html>
