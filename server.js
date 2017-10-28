@@ -14,6 +14,7 @@ const PORT = process.env.PORT || 8080;
 const whitelist = process.env.WHITELIST ? process.env.WHITELIST.split(',') : true;
 const corsOptions = {
     origin: Array.isArray(whitelist) ? ((origin, callback) => {
+        console.log(origin);
         if (whitelist.indexOf(origin) !== -1) {
             callback(null, true);
         } else {
@@ -23,6 +24,10 @@ const corsOptions = {
 };
 
 app.use(express.static('asset'));
+app.use((req, res, next) => {
+    req.headers.origin = req.headers.origin || req.headers.host || req.headers.referer;
+    next();
+});
 app.use(cors(corsOptions));
 app.use(bodyParser.urlencoded({
     extended: true
