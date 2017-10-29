@@ -153,6 +153,7 @@ $(document).ready(function () {
                     data: {
                         lat: pos.lat,
                         lng: pos.lng,
+                        category: $('#category_find').val()
                     },
                     success: function(data) {
                         clearMarkers();
