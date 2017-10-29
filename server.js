@@ -14,7 +14,6 @@ const PORT = process.env.PORT || 8080;
 const whitelist = process.env.WHITELIST ? process.env.WHITELIST.split(',') : true;
 const corsOptions = {
     origin: Array.isArray(whitelist) ? ((origin, callback) => {
-        console.log(origin);
         if (whitelist.indexOf(origin) !== -1) {
             callback(null, true);
         } else {
